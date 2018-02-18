@@ -1,0 +1,32 @@
+{
+  "name": "alexa-bahn",
+  "version": "0.0.1",
+  "description": "Alexa skill to interact with Deutsche Bahn API",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "exit 1",
+    "get-schema": "apollo-codegen introspect-schema https://api.deutschebahn.com/1bahnql/v1/graphql --header \"Authorization: Bearer ###API_KEY_HERE###\" --output graphql/schema.json",
+    "generate-graphql-types": "apollo-codegen generate graphql/*.graphql --schema graphql/schema.json --target typescript --addTypename --output graphql/queries.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Parcley/alexa-bahn.git"
+  },
+  "keywords": [
+    "Bahn",
+    "graphql",
+    "alexa",
+    "echo",
+    "abfahrtszeiten",
+    "skill"
+  ],
+  "author": "Martin Perzl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Parcley/alexa-bahn/issues"
+  },
+  "homepage": "https://github.com/Parcley/alexa-bahn#readme",
+  "devDependencies": {
+    "apollo-codegen": "^0.18.5"
+  }
+}

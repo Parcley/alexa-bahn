@@ -1,0 +1,8 @@
+query stationsByName ($name: String){
+  search(searchTerm: $name) {
+    stations {
+      name
+      primaryEvaId
+    }
+  }
+}
