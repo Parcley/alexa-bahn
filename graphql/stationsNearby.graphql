@@ -1,4 +1,4 @@
-query stationsNearby ($latitude: Float!, $longitude: Float!){
+query StationsNearby ($latitude: Float!, $longitude: Float!){
   nearby(latitude: $latitude, longitude: $longitude, radius: 20000) {
     stations(count: 5) {
       name

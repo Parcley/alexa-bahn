@@ -1,4 +1,4 @@
-query stationsByName ($name: String){
+query stationsByName($name: String){
   search(searchTerm: $name) {
     stations {
       name

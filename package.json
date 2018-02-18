@@ -2,11 +2,11 @@
   "name": "alexa-bahn",
   "version": "0.0.1",
   "description": "Alexa skill to interact with Deutsche Bahn API",
-  "main": "bin/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "exit 1",
-    "get-schema": "apollo-codegen introspect-schema https://api.deutschebahn.com/1bahnql/v1/graphql --header \"Authorization: Bearer ###API_KEY_HERE###\" --output graphql/schema.json",
-    "generate-graphql-types": "apollo-codegen generate graphql/*.graphql --schema graphql/schema.json --target typescript --addTypename --output graphql/queries.ts"
+    "get-schema": "apollo-codegen introspect-schema https://api.deutschebahn.com/1bahnql/v1/graphql --header \"Authorization: Bearer ###API_KEY_HERE###\" --output src/graphql/schema.json",
+    "generate-graphql-types": "apollo-codegen generate graphql/*.graphql --schema graphql/schema.json --target typescript --addTypename --output src/queries.ts"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,14 @@
   },
   "homepage": "https://github.com/Parcley/alexa-bahn#readme",
   "devDependencies": {
+    "@types/graphql": "^0.12.4",
+    "@types/node": "^9.4.6",
     "apollo-codegen": "^0.18.5"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.1.9",
+    "apollo-client": "^2.2.5",
+    "apollo-link-http": "^1.3.3",
+    "isomorphic-fetch": "^2.2.1"
   }
 }

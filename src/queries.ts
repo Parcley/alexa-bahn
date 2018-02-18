@@ -16,12 +16,12 @@ export interface stationsByNameQuery {
   },
 };
 
-export interface stationsNearbyQueryVariables {
+export interface StationsNearbyQueryVariables {
   latitude: number,
   longitude: number,
 };
 
-export interface stationsNearbyQuery {
+export interface StationsNearbyQuery {
   nearby:  {
     __typename: "Nearby",
     stations:  Array< {
